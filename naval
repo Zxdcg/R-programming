@@ -1,0 +1,27 @@
+#NAVAL DATASET
+
+library(readr)
+library(dplyr)
+library(plyr)
+
+#1. Kernal density plot
+x=c(navd$`compresser decay state coeff`)
+y=c(navd$ ` Turbine decay state coeff`)
+d<-density(x,y)
+plot(d)
+
+#2. scatterplot matrix using nava dataset
+navd<-read_csv("c:/Users/Pavan/Downloads/naval_vessel1.csv)
+view(navd)
+colSums(is.na(navd))
+pairs(navd)
+
+#3. Min-Max scaling to the nava dataset
+colSums(is.na(navd))
+view(navd)
+nv <- (navd-min(navd))/(max(nav)-min(navd))
+head(nv)
+
+#4.From the naval dataset find out mean and medianof both the otputs
+meanmed_df<-data.frame(mean_cdsc=(mean(navd$`compressor decay state coeff`)),mean_tdsc=(mean(navd$`Turbine decay state coeff`)),median_cdsc=(median(navd$`compressor decay state coeff`)),median_tdsc=(median(navd$`Turbine decay state coeff`)))
+
